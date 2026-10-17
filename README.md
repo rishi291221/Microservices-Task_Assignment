@@ -1,68 +1,78 @@
-# Microservices-Task
+Pull the files from Git.
 
-## Overview
-This document provides details on testing various services after running the `docker-compose` file. These services include User, Product, Order, and Gateway Services. Each service has its own endpoints for testing purposes.
+ <img width="940" height="291" alt="image" src="https://github.com/user-attachments/assets/ae389f41-18aa-4c5b-bcb6-2779e839f3bf" />
 
----
 
-## Services and Endpoints
+Create a docker file based on service.
+Gateway service – 3000 
 
-### **User Service**
-- **Base URL:** `http://localhost:3000`
-- **Endpoints:**
-  - **List Users:**  
-    ```
-    curl http://localhost:3000/users
-    ```
-    Or open in your browser: [http://localhost:3000/users](http://localhost:3000/users)
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install 
+COPY . .
+EXPOSE 3000
+CMD ["node", "app.js"]
+--------------------------------------------
+User service – 3001
 
----
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install 
+COPY . .
+EXPOSE 3001
+CMD ["node", "app.js"]
+---------------------------------------------
+Product service- 3002
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install 
+COPY . .
+EXPOSE 3002
+CMD ["node", "app.js"]
 
-### **Product Service**
-- **Base URL:** `http://localhost:3001`
-- **Endpoints:**
-  - **List Products:**  
-    ```
-    curl http://localhost:3001/products
-    ```
-    Or open in your browser: [http://localhost:3001/products](http://localhost:3001/products)
 
----
 
-### **Order Service**
-- **Base URL:** `http://localhost:3002`
-- **Endpoints:**
-  - **List Orders:**  
-    ```
-    curl http://localhost:3002/orders
-    ```
-    Or open in your browser: [http://localhost:3002/orders](http://localhost:3002/orders)
 
----
 
-### **Gateway Service**
-- **Base URL:** `http://localhost:3003/api`
-- **Endpoints:**
-  - **Users:**  
-    ```
-    curl http://localhost:3003/api/users
-    ```
-  - **Products:**  
-    ```
-    curl http://localhost:3003/api/products
-    ```
-  - **Orders:**  
-    ```
-    curl http://localhost:3003/api/orders
-    ```
+Order service-3003
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install 
+COPY . .
+EXPOSE 3003
+CMD ["node", "app.js"]
 
----
 
-## Instructions
-1. Start all services using the `docker-compose` file:
-   ```
-   docker-compose up
-   ```
-2. Once the services are running, use the above endpoints to verify the functionality.
 
-Happy testing!
+Include .dockerignore:
+ 
+
+ 
+
+
+Create docker-compose.yml
+ 
+
+To build images using docker compose.yml
+docker compose build --no-cache
+To start containers
+docker compose up -d
+docker ps
+ 
+
+ 
+     
+
+
+
+Through Gateway all the services are reachable:
+  
+ 
+
+
+
+
