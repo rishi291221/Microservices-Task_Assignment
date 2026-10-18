@@ -47,7 +47,7 @@ EXPOSE 3003
 CMD ["node", "app.js"]
 <img width="469" height="138" alt="image" src="https://github.com/user-attachments/assets/9e1cb7d0-46ee-44c8-af83-5c7d6eab04bb" />
 
-
+Verify and adjust the app.py based on the ports given.
 
 Include .dockerignore:
  
