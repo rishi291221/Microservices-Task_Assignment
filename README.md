@@ -89,6 +89,9 @@ Verification:
  
  <img width="659" height="239" alt="image" src="https://github.com/user-attachments/assets/f4c6cb83-4744-499d-b3e7-63695fd30441" />
 
+
+Through Gateway all the services are reachable:
+
 <img width="726" height="214" alt="image" src="https://github.com/user-attachments/assets/aaaf5571-3f7b-4aad-9e6e-ba8a27830d91" />
 
 
